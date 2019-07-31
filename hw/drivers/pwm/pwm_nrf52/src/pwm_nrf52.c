@@ -453,7 +453,7 @@ nrf52_pwm_configure_channel(struct pwm_dev *dev,
 
     config->output_pins[cnum] = (uint8_t) cfg->pin;
     config->output_pins[cnum] |= (cfg->inverted) ?
-        NRFX_PWM_PIN_INVERTED : config->output_pins[cnum];
+        NRFX_PWM_PIN_INVERTED : 0;
 
     if (instance->playing) {
         nrfx_pwm_uninit(&instance->drv_instance);
